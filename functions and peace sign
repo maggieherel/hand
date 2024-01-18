@@ -1,0 +1,62 @@
+#include <PRIZM.h>   //link up the library
+PRIZM prizm;        //declare object (refence to prism)
+
+void setup(){
+  prizm.PrizmBegin();
+  Serial.begin(9600);
+  relax();
+ }
+
+ 
+ void loop() {
+  relax();
+  delay(1000);
+  fist();
+  delay(1000);
+     prizm.setServoPosition(2,20); //pointer
+
+     prizm.setServoPosition(3,10); //thumb
+
+     prizm.setServoPosition(6,90); //middle
+
+     prizm.setServoPosition(4,10); //pinky
+
+     prizm.setServoPosition(5,10); //ring
+     delay(1000);
+
+       
+      
+      
+       
+ }
+ void stop(){
+  prizm.PrizmEnd();
+ }
+
+
+void relax(){
+     prizm.setServoPosition(2,20); //pointer
+
+    prizm.setServoPosition(3,90); //thumb
+
+     prizm.setServoPosition(6,90); //middle
+
+      prizm.setServoPosition(4,90); //pinky
+
+       prizm.setServoPosition(5,90);//ring
+       delay(1000);
+}
+
+void fist(){
+  prizm.setServoPosition(2,150); //pointer
+
+    prizm.setServoPosition(3,10); //thumb
+
+     prizm.setServoPosition(6,10); //middle
+
+      prizm.setServoPosition(4,10); //pinky
+
+       prizm.setServoPosition(5,10); //ring
+      
+  
+}
