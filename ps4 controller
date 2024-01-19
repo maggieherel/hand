@@ -16,23 +16,24 @@ void setup(){
   ps4.getPS4();  
     if (ps4.Button(TRIANGLE) == 1){
       relax();
+    }
       if (ps4.Button(CIRCLE) == 1){
         fist();
+      }
         if (ps4.Button(CROSS) == 1){
           peace();
+        }
           if (ps4.Button(SQUARE) ==1){
             phone();
             
           }
         }
- }
- }
- }
+
  
       
       
        
- }
+
  void stop(){
   prizm.PrizmEnd();
  }
@@ -86,5 +87,5 @@ void fist(){
       prizm.setServoPosition(4,90); //pinky
 
        prizm.setServoPosition(5,10); //ring
-      
-  }
+ }
+  
