@@ -1,0 +1,90 @@
+#include <PRIZM.h>   //link up the library
+PRIZM prizm;        //declare object (refence to prism)
+#include <TELEOP.h>
+PS4 ps4;        
+
+void setup(){
+  prizm.PrizmBegin();
+   ps4.setDeadZone(LEFT,10);    // set the Left Joystick dead zone range to +/- 10 
+ ps4.setDeadZone(RIGHT,10); 
+  Serial.begin(9600);
+  relax();
+ }
+
+ 
+ void loop() {
+  ps4.getPS4();  
+    if (ps4.Button(TRIANGLE) == 1){
+      relax();
+      if (ps4.Button(CIRCLE) == 1){
+        fist();
+        if (ps4.Button(CROSS) == 1){
+          peace();
+          if (ps4.Button(SQUARE) ==1){
+            phone();
+            
+          }
+        }
+ }
+ }
+ }
+ 
+      
+      
+       
+ }
+ void stop(){
+  prizm.PrizmEnd();
+ }
+
+
+void relax(){
+   prizm.setServoPosition(2,20); //pointer
+
+    prizm.setServoPosition(3,90); //thumb
+
+     prizm.setServoPosition(6,90); //middle
+
+      prizm.setServoPosition(4,90); //pinky
+
+       prizm.setServoPosition(5,90);//ring
+       delay(1000);
+}
+
+void fist(){
+  prizm.setServoPosition(2,150); //pointer
+
+    prizm.setServoPosition(3,10); //thumb
+
+     prizm.setServoPosition(6,10); //middle
+
+      prizm.setServoPosition(4,10); //pinky
+
+       prizm.setServoPosition(5,10); //ring
+      
+  
+}
+  void peace(){
+     prizm.setServoPosition(2,20); //pointer
+
+     prizm.setServoPosition(3,10); //thumb
+
+     prizm.setServoPosition(6,90); //middle
+
+     prizm.setServoPosition(4,10); //pinky
+
+     prizm.setServoPosition(5,10); //ring
+     delay(1000);
+  }
+ void phone(){
+   prizm.setServoPosition(2,150); //pointer
+
+    prizm.setServoPosition(3,90); //thumb
+
+     prizm.setServoPosition(6,10); //middle
+
+      prizm.setServoPosition(4,90); //pinky
+
+       prizm.setServoPosition(5,10); //ring
+      
+  }
